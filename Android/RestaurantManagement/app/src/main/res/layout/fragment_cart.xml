@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".ui.home.CartFragment">
+
+    <TextView
+        android:id="@+id/basketTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basket"
+        android:textSize="24dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
+
+
+
+    <ScrollView
+        android:id="@+id/cartScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+
+             <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/cartRecyclerView"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+
+             <LinearLayout
+                 android:id="@+id/orderDetailsLL"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:visibility="gone"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginRight="10dp"
+                 android:layout_marginTop="10dp">
+
+                 <EditText
+                     android:id="@+id/tableNumberEditText"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:hint=" Table Number"
+                     android:padding="15dp"
+                     android:textSize="16dp"
+                     android:background="#FFFFFF"/>
+
+
+                 <RelativeLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:background="@drawable/white_light_rect"
+                     >
+
+                     <ImageView
+                         android:id="@+id/icon"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:src="@drawable/ic_edit"
+                         android:layout_alignParentStart="true"
+                         android:layout_alignParentTop="true"
+                         android:paddingTop="12dp"
+                         android:paddingLeft="10dp"
+                         android:paddingRight="0dp"/>
+
+                     <EditText
+                         android:id="@+id/noteEditText"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_toEndOf="@id/icon"
+                         android:layout_alignParentTop="true"
+                         android:hint="Add note"
+                         android:padding="10dp"
+                         android:gravity="top|start"
+                         android:background="#FFFFFF"
+                         android:layout_marginLeft="2dp"
+                         android:minLines="4" />
+                 </RelativeLayout>
+
+             </LinearLayout>
+
+             <androidx.cardview.widget.CardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="8.5dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginRight="8.5dp"
+                 android:layout_marginBottom="10dp"
+                 app:cardCornerRadius="12dp">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/white_light_rect"
+                     android:orientation="vertical">
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:fontFamily="@font/roboto_regular"
+                         android:padding="10dp"
+                         android:text="Bill Details"
+                         android:textColor="@color/text_black"
+                         android:textSize="16dp"
+                         android:textStyle="bold" />
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginRight="10dp"
+                         android:orientation="horizontal">
+
+
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:fontFamily="@font/roboto_regular"
+                             android:text="Sub Total"
+                             android:textColor="#a2a2a2"
+                             android:textSize="12.7sp" />
+
+
+                         <TextView
+                             android:id="@+id/cartSubTotalTextView"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/roboto_medium"
+                             android:text="₹ 00.00"
+                             android:textColor="@color/text_black"
+                             android:textSize="12.7sp" />
+                     </LinearLayout>
+
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:layout_marginLeft="8.5dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="8.5dp"
+                         android:background="#f2f2f2" />
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="10dp"
+                         android:orientation="horizontal">
+
+
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:fontFamily="@font/roboto_regular"
+                             android:text="Discount"
+                             android:textColor="#a2a2a2"
+                             android:textSize="12.7sp" />
+
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/roboto_medium"
+                             android:text="₹ 00.00"
+                             android:textColor="@color/text_black"
+                             android:textSize="12.7sp" />
+                     </LinearLayout>
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:layout_marginLeft="8.5dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="8.5dp"
+                         android:background="#f2f2f2" />
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="10dp"
+                         android:orientation="horizontal">
+
+
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:fontFamily="@font/roboto_regular"
+                             android:text="GST and Restaurant Charges"
+                             android:textColor="#a2a2a2"
+                             android:textSize="12.7sp" />
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/roboto_medium"
+                             android:text="₹ 00.00"
+                             android:textColor="@color/text_black"
+                             android:textSize="12.7dp" />
+
+                     </LinearLayout>
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:layout_marginLeft="8.5dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="8.5dp"
+                         android:background="#f2f2f2" />
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginTop="15dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginBottom="25dp"
+                         android:orientation="horizontal">
+
+
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:fontFamily="@font/roboto_regular"
+                             android:text="Total Amount"
+                             android:textColor="@color/text_black"
+                             android:textSize="16dp"
+                             android:textStyle="bold" />
+
+
+                         <TextView
+                             android:id="@+id/cartTotalTextView"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/roboto_bold"
+                             android:text="₹ 00.00"
+                             android:textColor="@color/text_black"
+                             android:textSize="16dp" />
+                     </LinearLayout>
+
+
+                 </LinearLayout>
+
+             </androidx.cardview.widget.CardView>
+
+
+
+             <Button
+                 android:id="@+id/confirmOrderButton"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="20dp"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginRight="20dp"
+                 android:layout_marginBottom="80dp"
+                 android:background="@drawable/rect_button"
+                 android:text="Confirm Order" />
+
+         </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/emptyCartLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/emptycart"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Cart is Empty"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="22dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Looks like you haven't added\nanything to your cart yet"
+            android:textColor="@color/text_grey"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
